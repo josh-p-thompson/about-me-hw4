@@ -1,22 +1,17 @@
-from string import Template
 import glob
 import os
+from jinja2 import Template
 
 def generate_page(file_name, source, destination, title, index_btn="", projects_btn="", blog_btn=""): 
     """ generate pages from content and template and write to destination directory """
-    template = Template(import_content('templates/base.html'))
-    full_page = template.safe_substitute(
+    template = Template(open('templates/base.html').read())
+    template.render(
         title=title,
-        right_block_content=import_content(source + file_name), 
+        right_block_content=open(source + file_name).read(), 
         index_btn=index_btn, 
         projects_btn=projects_btn, 
         blog_btn=blog_btn,
     )
-    open(destination + file_name, 'w+').write(full_page)
-
-def import_content(file_path): 
-    """ import content files """
-    return open(file_path).read()
 
 def generate_page_list(): 
     """ generate list of pages to be created based on presence in content directory """
