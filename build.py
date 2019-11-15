@@ -18,10 +18,10 @@ def generate_page_list():
                 'title': title.capitalize(), 
             }
         )
-    return pages
+    return sorted(pages, key = lambda page: page['title']) 
 
 def generate_pages(pages): 
-    """ generate pages from content and template and write to destination directory """
+    """ generates pages from content/template and writes to destination directory """
     template = Template(open('templates/base.html').read())
     for page in pages: 
         print(f'generating page: {page}\n') 
