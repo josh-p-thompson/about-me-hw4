@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>
-        Josh Thompson - ${title}
+        Josh Thompson - {{title}}
     </title>
 
     <!-- bootstrap CSS -->
@@ -59,20 +59,16 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for page in pages %}
                     <div class="button-padding col">
-                        <a role="button" class="btn btn-outline-dark ${index_btn} btn-block" href="./index.html" >About</a>
+                        <a role="button" class="btn btn-outline-dark {% if page.file_name == file_name%}active{% else %}''{% endif %} btn-block" href="{{page.file_name}}" >{{page.title}}</a>
                     </div>
-                    <div class="button-padding col">
-                        <a role="button" class="btn btn-outline-dark ${projects_btn} btn-block" href="./projects.html" >Projects</a>
-                    </div>
-                    <div class="button-padding col">
-                        <a role="button" class="btn btn-outline-dark ${blog_btn} btn-block" href="./blog.html">Blog</a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <!-- added offset offset-md-6-->
             <div class="right-block col-lg-6 offset-lg-6">
-                ${right_block_content}
+                {{right_block_content}}
             </div>
         </div>
     </div>
