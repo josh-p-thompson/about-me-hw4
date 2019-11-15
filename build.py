@@ -13,37 +13,29 @@ def generate_page_list():
         pages.append(
             {
                 'file_name': file_name, 
-                'source': 'content/', 
-                'destination': 'docs/', 
+                'source': file, 
+                'destination': 'docs/' + file_name, 
                 'title': title.capitalize(), 
-                title + '_btn': 'active',
             }
         )
     return pages
 
-def generate_page(file_name, source, destination, title, pages): 
+def generate_pages(pages): 
     """ generate pages from content and template and write to destination directory """
     template = Template(open('templates/base.html').read())
-    full_page = template.render(
-        title=title,
-        file_name = file_name,
-        destination=destination+file_name,
-        right_block_content=open(source + file_name).read(), 
-        pages=pages,
-    )
-    open(destination + file_name, 'w+').write(full_page)
+    for page in pages: 
+        print(f'generating page: {page}\n') 
+        full_page = template.render(
+            title= page['title'],
+            file_name = page['file_name'],
+            right_block_content=open(page['source']).read(), 
+            pages=pages,
+        )
+        open(page['destination'], 'w+').write(full_page)
 
 def main(): 
     pages = generate_page_list()
-    for page in pages:
-        print(f'generating page {page}\n') 
-        generate_page(
-            file_name=page['file_name'],
-            source=page['source'], 
-            destination=page['destination'], 
-            title=page['title'], 
-            pages=pages,
-        )
+    generate_pages(pages)
 
 if __name__ == "__main__": 
     main()
