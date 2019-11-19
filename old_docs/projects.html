@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>
-        Josh Thompson - {{title|title}}
+        Josh Thompson - Projects
     </title>
 
     <!-- bootstrap CSS -->
@@ -59,38 +59,84 @@
                     </div>
                 </div>
                 <div class="row">
-                    {% for page in pages %}
+                    
                     <div class="button-padding col">
-                        <a role="button" class="btn btn-outline-dark {% if page.file_name == file_name%}active{% else %}''{% endif %} btn-block" href="{{page.file_name}}" >{{ page.title|title }}</a>
+                        <a role="button" class="btn btn-outline-dark '' btn-block" href="index.html" >About</a>
                     </div>
-                    {% endfor %}
+                    
+                    <div class="button-padding col">
+                        <a role="button" class="btn btn-outline-dark '' btn-block" href="blog.html" >Blog</a>
+                    </div>
+                    
+                    <div class="button-padding col">
+                        <a role="button" class="btn btn-outline-dark active btn-block" href="projects.html" >Projects</a>
+                    </div>
+                    
                 </div>
             </div>
             <!-- added offset offset-md-6-->
             <div class="right-block col-lg-6 offset-lg-6">
-                {% for card in cards %}
-                <div class ='row'>
-                    <div class = '{{ title }}-card card w-100'>
+                                <div class="row">
+                    <div class="project-card card w-100">
                         <div class='row'>
-                            <div class='col'>
-                                {{ card.top }}
+                            <div class='col-9'>
+                                <h4> Personal Website</h4>
+                                <p>HTML, CSS, Bootstrap, Python</p> 
                             </div>
-                            {% if title == 'projects' %}
                             <div class='git-icon col'>
-                                <a href='https://github.com/josh-p-thompson/' target='_blank'>
-                                    <i class='fab fa-github'></i>
+                                <a href="https://github.com/josh-p-thompson/about-me" target="_blank">
+                                    <i class="fab fa-github"></i>
                                 </a>
                             </div>
-                            {% endif %}
                         </div>
                         <div class='row'>
                             <div class='col'>
-                                {{ card.bottom }}
+                                <img class="project1-img card-img-top" src="./images/project1.png" alt="Card image cap">
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="row">
+                    <div class="project-card card w-100">
+                            <div class='row'>
+                                <div class='col-9'>
+                                    <h4> Project #2</h4>
+                                    <p>Python</p> 
+                                </div>
+                                <div class='git-icon col'>
+                                    <a href="https://github.com/josh-p-thompson" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col'>
+                                    <img class="project1-img card-img-top" src="./images/project1.png" alt="Card image cap">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="project-card card w-100">
+                            <div class='row'>
+                                <div class='col-9'>
+                                    <h4> Project #3</h4>
+                                    <p>React</p> 
+                                </div>
+                                <div class='git-icon col'>
+                                    <a href="https://github.com/josh-p-thompson" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col'>
+                                    <img class="project1-img card-img-top" src="./images/project1.png" alt="Card image cap">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
             </div>
         </div>
     </div>

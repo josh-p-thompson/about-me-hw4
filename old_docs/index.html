@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>
-        Josh Thompson - {{title|title}}
+        Josh Thompson - About
     </title>
 
     <!-- bootstrap CSS -->
@@ -59,38 +59,78 @@
                     </div>
                 </div>
                 <div class="row">
-                    {% for page in pages %}
+                    
                     <div class="button-padding col">
-                        <a role="button" class="btn btn-outline-dark {% if page.file_name == file_name%}active{% else %}''{% endif %} btn-block" href="{{page.file_name}}" >{{ page.title|title }}</a>
+                        <a role="button" class="btn btn-outline-dark active btn-block" href="index.html" >About</a>
                     </div>
-                    {% endfor %}
+                    
+                    <div class="button-padding col">
+                        <a role="button" class="btn btn-outline-dark '' btn-block" href="blog.html" >Blog</a>
+                    </div>
+                    
+                    <div class="button-padding col">
+                        <a role="button" class="btn btn-outline-dark '' btn-block" href="projects.html" >Projects</a>
+                    </div>
+                    
                 </div>
             </div>
             <!-- added offset offset-md-6-->
             <div class="right-block col-lg-6 offset-lg-6">
-                {% for card in cards %}
-                <div class ='row'>
-                    <div class = '{{ title }}-card card w-100'>
+                                <div class="row">
+                    <div class="about-card card w-100">
                         <div class='row'>
                             <div class='col'>
-                                {{ card.top }}
+                                <h4 class="card-title">
+                                    Experience
+                                </h4>
+                                <h6 class='card-subtitle'>
+                                    Data Analyst, Operations - Gig Car Share
+                                </h6>
+                                <p>
+                                    Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Lacinia quis vel eros donec. Cursus eget nunc scelerisque viverra. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.
+                                </p>
                             </div>
-                            {% if title == 'projects' %}
-                            <div class='git-icon col'>
-                                <a href='https://github.com/josh-p-thompson/' target='_blank'>
-                                    <i class='fab fa-github'></i>
-                                </a>
-                            </div>
-                            {% endif %}
                         </div>
                         <div class='row'>
                             <div class='col'>
-                                {{ card.bottom }}
+                                <h6 class="card-subtitle">
+                                    Senior Analyst - Treacy & Company
+                                </h6>
+                                <p>
+                                    Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Lacinia quis vel eros donec. Cursus eget nunc scelerisque viverra. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="row">
+                    <div class="about-card card w-100">
+                        <div class='row'>
+                            <div class='col'>
+                                <h4 class="card-title">
+                                    Education
+                                </h4>
+                                <h6 class='card-subtitle'>
+                                    Kickstart Coding
+                                </h6>
+                                <p>
+                                    Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Lacinia quis vel eros donec. Cursus eget nunc scelerisque viverra. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.
+                                </p>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col'>
+                                <h6 class="card-subtitle">
+                                    Amherst College
+                                </h6>
+                                <p>
+                                    Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Lacinia quis vel eros donec. Cursus eget nunc scelerisque viverra. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

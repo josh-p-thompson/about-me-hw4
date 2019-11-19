@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;; 
+    font-family: 'Roboto', sans-serif;;
     font-weight: 300;
     color: #36393C;
 }
@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6{
 
 h1 {
     font-size: 290%;
+}
+
+h6 {
+    font-weight: 600;
 }
 
 .name-title {
@@ -96,9 +100,9 @@ h1 {
     color: #3456E5;
 }
 
-.project-card img {
+.projects-card img {
     margin: auto;
-    padding: 10px;
+    padding-top: 40px;
     filter: drop-shadow(0 0 0.25rem #36393C); 
 }
 
