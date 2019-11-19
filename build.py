@@ -4,12 +4,18 @@ from jinja2 import Template
 import markdown
 
 def generate_page_list(): 
+    """
+    determines pages to be created based on directories within content directory
+    returns list of dictionaries, each representing an html page to be created
+    """
     pages = []
     for directory in glob.glob("content/*"): 
         title = os.path.basename(directory)
         file_name = title + ".html"
         if title == 'index': 
             title = 'about'
+            
+        # each file within directory is associated with a card to be displayed on the page
         cards = [markdown_to_html(file) for file in glob.glob(directory + "/*.md")]
         pages.append(
             {
@@ -43,7 +49,6 @@ def build_pages(pages):
             pages=pages,
         )
         open(page['destination'], 'w+').write(full_page)
-
 
 def main(): 
     pages = generate_page_list()

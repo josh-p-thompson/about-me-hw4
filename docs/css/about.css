@@ -81,6 +81,10 @@ h6 {
     filter: drop-shadow(4px 4px 4px #36393C)
 }
 
+.card-title a {
+    color:inherit;
+}
+
 @media (max-width: 575.98px) {
     .card {
         min-height: 20rem;
