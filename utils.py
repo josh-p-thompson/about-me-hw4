@@ -60,10 +60,3 @@ def build(pages):
             pages=pages,
         )
         open(page['destination'], 'w+').write(full_page)
-
-def main(): 
-    pages = generate_page_list()
-    build(pages)
-
-if __name__ == "__main__": 
-    main()
