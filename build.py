@@ -3,12 +3,6 @@ import os
 from jinja2 import Template
 import markdown
 
-
-# md = markdown.Markdown(extensions=["markdown.extensions.meta"])
-# data = open('content/index/index1.md').read()
-# html = md.convert(data)
-# print(link)
-
 def generate_page_list(): 
     """
     determines pages to be created based on directories within content directory
