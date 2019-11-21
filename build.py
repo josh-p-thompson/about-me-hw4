@@ -14,7 +14,7 @@ def generate_page_list():
         file_name = title + ".html"
         if title == 'index': 
             title = 'about'
-            
+
         # each file within directory is associated with a card to be displayed on the page
         cards = [markdown_to_html(file) for file in glob.glob(directory + "/*.md")]
         pages.append(

@@ -1,4 +1,5 @@
 title: projects
+link: https://github.com/josh-p-thompson/about-me-hw4
 
 #### Project 2 {: .card-title }
 
