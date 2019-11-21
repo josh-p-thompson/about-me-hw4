@@ -1,5 +1,5 @@
 title: projects
-link: https://github.com/josh-p-thompson/about-me-hw4
+project_link: https://github.com/josh-p-thompson/about-me-hw4
 
 #### Static Site Generator {: .card-title }
 

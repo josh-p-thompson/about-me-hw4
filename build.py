@@ -3,6 +3,12 @@ import os
 from jinja2 import Template
 import markdown
 
+
+# md = markdown.Markdown(extensions=["markdown.extensions.meta"])
+# data = open('content/index/index1.md').read()
+# html = md.convert(data)
+# print(link)
+
 def generate_page_list(): 
     """
     determines pages to be created based on directories within content directory
@@ -35,10 +41,21 @@ def markdown_to_html(file):
     md = markdown.Markdown(extensions=["markdown.extensions.meta", "markdown.extensions.attr_list", "markdown.extensions.extra"])
     data = open(file).read()
     html = md.convert(data)
-    card = {'top': html.split('<hr />')[0], 'bottom': html.split('<hr />')[1]}
+    title = md.Meta["title"][0]
+    if title == 'projects': 
+        project_link = md.Meta["project_link"][0]
+    else: 
+        project_link = None
+    card = {'top': html.split('<hr />')[0], 
+            'bottom': html.split('<hr />')[1], 
+            'meta': {
+                'title': title, 
+                'project_link': project_link,
+                }
+            }
     return card
 
-def build_pages(pages): 
+def build(pages): 
     template = Template(open('templates/base.html').read())
     for page in pages: 
         print(f'generating page: {page}\n') 
@@ -52,7 +69,7 @@ def build_pages(pages):
 
 def main(): 
     pages = generate_page_list()
-    build_pages(pages)
+    build(pages)
 
 if __name__ == "__main__": 
     main()
